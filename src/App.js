@@ -2,15 +2,15 @@ import React from 'react'
 import * as R from 'ramda'
 import './App.css'
 
-import sum1toN from './problems/easy/sum1toN'
-import sum1toN3and5 from './problems/easy/sum1toN3and5'
-import prod1toN from './problems/easy/prod1toN'
+import sum1toN from '../problems/easy/sum1toN'
+import sum1toN3and5 from '../problems/easy/sum1toN3and5'
+import prod1toN from '../problems/easy/prod1toN'
 const easy = {sum1toN, sum1toN3and5, prod1toN}
 
-import totalList from './problems/medium/totalList'
+import totalList from '../problems/medium/totalList'
 const medium = {totalList}
 
-import smallestMultiple from './problems/hard/smallestMultiple'
+import smallestMultiple from '../problems/hard/smallestMultiple'
 const hard = {smallestMultiple}
 
 const DELAY = 100
