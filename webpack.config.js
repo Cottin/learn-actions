@@ -1,7 +1,8 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const {merge} = require('webpack-merge');
+import path from 'path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer'
+import {merge} from 'webpack-merge'
+const __dirname = path.resolve()
 
 const isAnalyze = typeof process.env.BUNDLE_ANALYZE !== "undefined"
 
@@ -26,7 +27,10 @@ const common = {
 				use: {
 					loader: 'babel-loader',
 					options: {}
-				}
+				},
+				resolve: { // https://github.com/graphql/graphql-js/issues/2721#issuecomment-723008284
+					fullySpecified: false
+				},
 			},
 			{
 				test: /\.css$/i,
@@ -45,7 +49,7 @@ const development = {
 }
 
 
-module.exports = (env, args) => {
+export default (env, args) => {
   switch(args.mode) {
     case 'development':
       return merge(common, development);
