@@ -7,6 +7,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
+  "homepage": "https://Cottin.github.io/cool-problems",
+  "type": "module",
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
@@ -27,7 +29,8 @@
     "build:prod": "cross-env NODE_ENV=production webpack --mode production",
     "build:dev": "webpack --mode development",
     "analyze:prod": "cross-env NODE_ENV=production BUNDLE_ANALYZE=true webpack --mode production",
-    "analyze:dev": "cross-env BUNDLE_ANALYZE=true webpack --mode development"
+    "analyze:dev": "cross-env BUNDLE_ANALYZE=true webpack --mode development",
+    "test": "mocha ./problems/**/test*.js --exit"
   },
   "eslintConfig": {
     "extends": [
